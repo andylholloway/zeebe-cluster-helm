@@ -17,9 +17,6 @@ spec:
     - port: {{ .Values.service.http.port }}
       protocol: TCP
       name: http  
-    - port: {{ .Values.service.gateway.port }}
-      protocol: TCP
-      name: gateway
   selector:
     app.kubernetes.io/name: {{ include "zeebe-cluster.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
